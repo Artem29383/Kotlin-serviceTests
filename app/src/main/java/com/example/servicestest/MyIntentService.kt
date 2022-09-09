@@ -11,7 +11,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.*
 
-class MyForegroundService : Service() {
+class MyIntentService : Service() {
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -74,7 +74,7 @@ class MyForegroundService : Service() {
         private const val NOTIFY_ID = 777
 
         fun newIntent(context: Context): Intent {
-            return Intent(context, MyForegroundService::class.java)
+            return Intent(context, MyIntentService::class.java)
         }
     }
 }
